@@ -18,6 +18,8 @@ public class Bank
     private String startTime;
     public String website;
     public String bankAddress="1234 JavaStreet, Anycity, ThisState, 34567";
+    public int maxNumOfCustomers= 20;
+    public String bankName="JBANK";
     /**
      * Constructor for objects of class Bank
      */
