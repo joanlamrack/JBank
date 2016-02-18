@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Account()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Account\r\n
+comment1.params=type\ amount
+comment1.target=Account(char,\ double)
+comment2.params=amount
+comment2.target=void\ deposit(double)
+comment3.params=
+comment3.target=char\ getAcctType()
+comment4.params=
+comment4.target=double\ getBalance()
+comment5.params=
+comment5.target=java.lang.String\ getId()
+comment6.params=amount
+comment6.target=void\ setBalance(double)
+comment7.params=acctId
+comment7.target=void\ setID(java.lang.String)
+comment8.params=type
+comment8.target=void\ setAcctType(char)
+comment9.params=amount
+comment9.target=void\ withdraw(double)
+numComments=10
