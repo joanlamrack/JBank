@@ -37,7 +37,7 @@ public class Customer
         return null;
     }
     private Account getAccount(){
-        return accounts;
+        return null;
     }
     private int getCustomerId(){
         return 0;
