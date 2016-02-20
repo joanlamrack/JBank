@@ -1,2 +1,8 @@
 #untrack bluej files
 *.bluej
+
+#untrack the compiled files
+*.class
+
+#untrack ctxt files
+*.ctxt
