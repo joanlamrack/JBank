@@ -22,7 +22,7 @@ public class Account
     private void deposit(double amount){
     }
     public char getAcctType(){
-        return acctType;
+        return 0;
     }
     private double getBalance(){
         return 0;
