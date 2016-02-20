@@ -43,7 +43,7 @@ public class Customer
         return 0;
     }
     private String getEmail(){
-        return email;
+        return null;
     }
     private String getCustomerName(){
         return null;
@@ -52,7 +52,7 @@ public class Customer
         return 0;
     }
     private String getPhoneNumber(){
-        return phoneNumber;
+        return null;
     }
     private void setAddress(String street, String city, String code){
         
