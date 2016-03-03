@@ -20,23 +20,29 @@ public class Bank
     public static String bankAddress="1234 JavaStreet, Anycity, ThisState, 34567";
     public static int maxNumOfCustomers= 20;
     public static String bankName="JBANK";
-    private static int numOfCurrentCustomer;
-    private static int nextID;
+    public static int numOfCurrentCustomer;
+    public static int nextID;
     /**
      * Constructor for objects of class Bank
      */
+    private Bank(){
+    }
+    
     /**
      * getAddress - Method untuk mengambil alamat bank yang ada pada variabel bankAddress
      * @return String   alamat bank
      */
+    /*
     public static String getAddress(){
         return bankAddress;
     }
+    */
     /**
      * Mengambil data  persenan bunga
      * 
      * @return double   bunga bank
      */
+    
     public static double getCreditRate(){
         return creditInterestRate;
     }
@@ -77,9 +83,11 @@ public class Bank
      * 
      * @return String   nama bank
      */
+    /*
     public static String getName(){
         return bankName;
     }
+    */
     /**
      * Menunjukkan ID kustomer berikutnya
      * 
@@ -87,7 +95,22 @@ public class Bank
      */ 
     public static int getNextID(){
         nextCustID=lastCustID+1;
-        return nextCustID;
+        if( numOfCurrentCustomer==maxNumOfCustomers){
+            nextID=0;
+            return nextID;
+        }
+           else if(nextCustID==0){
+                    nextCustID=1000;
+                    numOfCurrentCustomer++;
+                    nextCustID=nextCustID;
+                    return nextCustID;
+                }
+                else{
+                    nextID=nextCustID;
+                    lastCustID=nextCustID;
+                    numOfCurrentCustomer++;
+                    return nextID;
+        }
     }
      /**
      * Menunjukkan data website dari bank
@@ -139,7 +162,9 @@ public class Bank
     public static void setPremium(double rate){
        premiumInterestRate=rate;
     }
+    /*
     public static int getNumOfCurrentCustomer(){
         return numOfCurrentCustomer;
     }
+    */
 }

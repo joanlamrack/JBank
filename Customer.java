@@ -27,11 +27,17 @@ public class Customer
     {
         // initialise instance variables
     }
-    public Customer(String fname, String lname, String dob){
+    public Customer(String firstName, String lastName, String dateOfBirth){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.dateOfBirth=dateOfBirth;
         
     }
-    public Customer(String firstName, String lastName, String dateOfBirth, int custId){
-        
+     public Customer(String firstName, String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.dateOfBirth="none";
+        this.custId=Bank.getNextID();
     }
      /**
      * menyatukan data jalan, kota dan kode pos menjadi satu rangkaian string alamat
@@ -139,8 +145,8 @@ public class Customer
      * @param  phoneNum   nomor telepon dalam bentuk string ""
      * @return  none
      */
-    private void setPhoneNumber(String phoneNum){
-        phoneNumber=phoneNum;
+    private void setPhoneNumber(String phoneNumber){
+        this.phoneNumber=phoneNumber;
     }
     /**
      * To set an account
@@ -150,5 +156,8 @@ public class Customer
      */
     public void setAccount(Account akun){
         accounts=akun;
+    }
+    public void setCustId(int custId){
+        this.custId=custId;
     }
 }
