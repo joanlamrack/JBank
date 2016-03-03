@@ -94,24 +94,22 @@ public class Bank
      * @return int  ID kustomer berikutnya
      */ 
     public static int getNextID(){
-        nextCustID=lastCustID+1;
         if( numOfCurrentCustomer==maxNumOfCustomers){
             nextID=0;
-            return nextID;
         }
-           else if(nextCustID==0){
+                else if(nextID==0){
                     nextCustID=1000;
                     numOfCurrentCustomer++;
-                    nextCustID=nextCustID;
-                    return nextCustID;
-                }
-                else{
                     nextID=nextCustID;
-                    lastCustID=nextCustID;
+                }
+                else if(numOfCurrentCustomer!=0 | numOfCurrentCustomer>0){
+                    nextID=lastCustID+1;
+                    lastCustID=nextID;
                     numOfCurrentCustomer++;
-                    return nextID;
-        }
+                }
+        return nextID;
     }
+    
      /**
      * Menunjukkan data website dari bank
      * 
