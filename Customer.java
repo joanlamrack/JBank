@@ -31,13 +31,13 @@ public class Customer
         this.firstName=firstName;
         this.lastName=lastName;
         this.dateOfBirth=dateOfBirth;
+        this.custId=Bank.getNextID();
         
     }
      public Customer(String firstName, String lastName){
         this.firstName=firstName;
         this.lastName=lastName;
         this.dateOfBirth="none";
-        this.custId=Bank.getNextID();
     }
      /**
      * menyatukan data jalan, kota dan kode pos menjadi satu rangkaian string alamat
