@@ -3,7 +3,7 @@
  * Mewakili kelas Bank yang mengandung informasi mengenai Bank
  * 
  * @author Erithiana Sisijoan Koesnadi
- * @version 2.3 (Javadoc Session)
+ * @version 3.4 (Classes Session)
  */
 public class Bank
 {
@@ -89,7 +89,7 @@ public class Bank
     }
     */
     /**
-     * Menunjukkan ID kustomer berikutnya
+     * Menunjukkan ID kustomer berikutnya. semua akun dimulai dari angka 1000.
      * 
      * @return int  ID kustomer berikutnya
      */ 

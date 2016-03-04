@@ -3,7 +3,7 @@
  * Mewakili Kelas Akun yang berhubungan dengan balance dan tipe akun
  * 
  * @author Erithiana Sisijoan Koesnadi 
- * @version 2.4 (Javadoc Session & Business Rules)
+ * @version 3.4 (Classes Session)
  */
 public class Account
 {
@@ -19,10 +19,15 @@ public class Account
         acctType = 'S';
         balance=20.00;
     }
+    /**
+     * Method constructor dengan input tipe akun dan saldo
+     * @param type tipe akun yang akan dibuat
+     * @param amount jumlah saldo awal
+     */
     public Account(char type, double amount){
         if(type=='S'|type=='O'|type=='L'|type=='I'){
-            acctType=type;
             if(amount>0){
+                acctType=type;
                 balance=amount;
             }
         }

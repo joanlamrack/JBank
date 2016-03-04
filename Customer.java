@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
  * @author Erithiana Sisijoan
- * @version 2.4 (Javadoc Session & Business Rules)
+ * @version 3.4 (Classes Session)
  */
 public class Customer
 {
@@ -27,6 +27,12 @@ public class Customer
     {
         // initialise instance variables
     }
+     /**
+     * Constructor method dengan input nama depan, nama belakang dan tanggal lahir
+     * @param firstName nama depan
+     * @param lastName nama belakang
+     * @param dateOfBirth tanggal tempat lahir
+     */
     public Customer(String firstName, String lastName, String dateOfBirth){
         this.firstName=firstName;
         this.lastName=lastName;
@@ -34,6 +40,11 @@ public class Customer
         this.custId=Bank.getNextID();
         
     }
+     /**
+     * Constructor method untuk Customer dengan input nama depan dan belakang saja
+     * @param firstName nama depan
+     * @param lastName nama belakang
+     */
      public Customer(String firstName, String lastName){
         this.firstName=firstName;
         this.lastName=lastName;
@@ -157,7 +168,21 @@ public class Customer
     public void setAccount(Account akun){
         accounts=akun;
     }
+    /**
+     * To set Customer id
+     * 
+     * @param custId Id kustomer yang akan di assign
+     * @return none
+     */
     public void setCustId(int custId){
         this.custId=custId;
+    }
+     /**
+     * Metode getter untuk customer id
+     * 
+     * @return Id kustomer
+     */
+    public int getCustid(){
+        return custId;
     }
 }

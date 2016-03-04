@@ -4,5 +4,4 @@ comment0.target=void\ main(java.lang.String[])
 comment0.text=\r\n\ Awal\ dari\ Program\r\n
 comment1.params=
 comment1.target=Teller()
-comment1.text=\r\n\ Legend\:\r\n\ (1)\ Customer\ object\ named\ c1\ using\ setname\ Method\ to\ enter\ names\r\n\ (2)\ using\ string\ variable\ named\ printout\ to\ contain\ return\ value\ of\ c1's\r\n\ getCustomerName\r\n\ (3)\ Print\ the\ result\r\n\ \r\n\ Second\ Legend\:\r\n\ (4)\ Account\ object\ named\ a1\ using\ setBalance\ Method\ to\ enter\ balance\ value\r\n\ (5)\ using\ float\ variable\ named\ balance\ to\ contain\ return\ value\ of\ a1's\r\n\ getBalance\r\n\ (6)\ Print\ the\ result\r\n\ \r\n\ Third\ Legend\:\r\n\ (7)\ Account\ object\ named\ c1\ using\ setAccount\ Method\ to\ assign\ c1\ to\ a1\r\n\ (8)\ using\ Account-type\ variable\ named\ akun1\ to\ contain\ return\ value\ of\ c1's\r\n\ getAccount\r\n\ (9)\ using\ float\ variable\ named\ balance2\ to\ contain\ return\ value\ of\ akun1's\r\n\ getBalance()\r\n\ (10)\ Print\ the\ result\r\n\r\n
 numComments=2
