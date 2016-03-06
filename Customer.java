@@ -87,7 +87,7 @@ public class Customer
      * 
      * @return  nomor telepon dari kustomer
      */
-    private String getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
      /**
@@ -139,8 +139,8 @@ public class Customer
      * @param  phoneNum   nomor telepon dalam bentuk string ""
      * @return  none
      */
-    private void setPhoneNumber(String phoneNum){
-        phoneNumber=phoneNum;
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber=phoneNumber;
     }
     /**
      * To set an account

@@ -86,7 +86,8 @@ public class Bank
      * @return int  ID kustomer berikutnya
      */ 
     public static int getNextID(){
-        nextCustID=lastCustID+1;
+        nextCustID = lastCustID+1;
+        lastCustID = nextCustID;
         return nextCustID;
     }
      /**

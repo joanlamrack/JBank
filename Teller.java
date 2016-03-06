@@ -8,16 +8,32 @@
 public class Teller
 {
     // instance variables - replace the example below with your own
-    private Customer c1=new Customer();
-    private Account a1 = new Account();
-    public String printout;
-    private Account akun1;
-    private double balance, balance2;
+
    
     /**
      * Awal dari Program
      */
     public static void main(String[] args){
+        Customer c1=new Customer();
+        Account a1 = new Account();
+        String printout;
+        Account akun1;
+        double balance, balance2;
+        
+        c1.setName("sanadhi","sutandi");// (1)
+        c1.setPhoneNumber("0123");
+        printout=c1.getCustomerName();// (2)
+        System.out.println(printout);//(3)
+        System.out.println(c1.getPhoneNumber());//(3)
+    
+        a1.setBalance(1000);//(1)
+        balance=a1.getBalance();//(2)
+        System.out.println(balance);//(3)
+    
+        c1.setAccount(a1);//(1)
+        akun1=c1.getAccount();//(2)
+        balance2=akun1.getBalance();//(3)
+        System.out.println(balance2);//(4)
     }
     /* Legend:
      * (1) Customer object named c1 using setname Method to enter names
@@ -41,17 +57,6 @@ public class Teller
 
      */
     public Teller(){
-    c1.setName("sanadhi","sutandi");// (1)
-    printout=c1.getCustomerName();// (2)
-    System.out.println(printout);//(3)
     
-    a1.setBalance(1000);//(1)
-    balance=a1.getBalance();//(2)
-    System.out.println(balance);//(3)
-
-    c1.setAccount(a1);//(1)
-    akun1=c1.getAccount();//(2)
-    balance2=akun1.getBalance();//(3)
-    System.out.println(balance2);//(4)
     }
 }

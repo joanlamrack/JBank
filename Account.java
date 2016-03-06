@@ -29,10 +29,10 @@ public class Account
      * @param  amount jumlah uang yang akan dimasukkan
      */
     public void deposit(double amount){
-    if (amount>0|amount!=0){
-        balance=balance + amount;
+        if (amount>0|amount!=0){
+            balance=balance + amount;
+        }
     }
-}
      /**
      * Mengetahui tipe dari suatu akun, untuk menentukan sifat dari akun tersebut
      * 
