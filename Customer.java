@@ -1,10 +1,11 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
+ * ASISTEN: perhatikan kerapihan indentasi
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
  * @author Erithiana Sisijoan
- * @version 2.4 (Javadoc Session & Business Rules)
+ * @version 3.4 (Classes Session)
  */
 public class Customer
 {
@@ -27,11 +28,28 @@ public class Customer
     {
         // initialise instance variables
     }
-    public Customer(String fname, String lname, String dob){
+     /**
+     * Constructor method dengan input nama depan, nama belakang dan tanggal lahir
+     * @param firstName nama depan
+     * @param lastName nama belakang
+     * @param dateOfBirth tanggal tempat lahir
+     */
+    public Customer(String firstName, String lastName, String dateOfBirth){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.dateOfBirth=dateOfBirth;
+        this.custId=Bank.getNextID();
         
     }
-    public Customer(String firstName, String lastName, String dateOfBirth, int custId){
-        
+     /**
+     * Constructor method untuk Customer dengan input nama depan dan belakang saja
+     * @param firstName nama depan
+     * @param lastName nama belakang
+     */
+     public Customer(String firstName, String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.dateOfBirth="none";
     }
      /**
      * menyatukan data jalan, kota dan kode pos menjadi satu rangkaian string alamat
@@ -150,5 +168,22 @@ public class Customer
      */
     public void setAccount(Account akun){
         accounts=akun;
+    }
+    /**
+     * To set Customer id
+     * 
+     * @param custId Id kustomer yang akan di assign
+     * @return none
+     */
+    public void setCustId(int custId){
+        this.custId=custId;
+    }
+     /**
+     * Metode getter untuk customer id
+     * 
+     * @return Id kustomer
+     */
+    public int getCustid(){
+        return custId;
     }
 }

@@ -3,7 +3,7 @@
  * Mewakili Kelas Akun yang berhubungan dengan balance dan tipe akun
  * 
  * @author Erithiana Sisijoan Koesnadi 
- * @version 2.4 (Javadoc Session & Business Rules)
+ * @version 3.4 (Classes Session)
  */
 public class Account
 {
@@ -16,9 +16,21 @@ public class Account
      */
     public Account()
     {
+        acctType = 'S';
+        balance=20.00;
     }
+    /**
+     * Method constructor dengan input tipe akun dan saldo
+     * @param type tipe akun yang akan dibuat
+     * @param amount jumlah saldo awal
+     */
     public Account(char type, double amount){
-        
+        if(type=='S'|type=='O'|type=='L'|type=='I'){
+            if(amount>0){
+                acctType=type;
+                balance=amount;
+            }
+        }
     }
       /**
      * Operasi deposit pada suatu akun, balance yang ada akan ditambahkan
@@ -28,11 +40,15 @@ public class Account
      * 
      * @param  amount jumlah uang yang akan dimasukkan
      */
-    public void deposit(double amount){
+    public boolean deposit(double amount){
+        if(amount<0){return false;}
+        else
         if (amount>0|amount!=0){
-            balance=balance + amount;
-        }
+        balance=balance + amount;
+        return true;
     }
+    else{return false;}
+}
      /**
      * Mengetahui tipe dari suatu akun, untuk menentukan sifat dari akun tersebut
      * 
@@ -89,13 +105,14 @@ public class Account
      * melebihi jumlah uang dalam akun, transaksi ditolak.
      * @param amount jumlah uang yang akan di ambil
      */
-    public void withdraw(double amount){
+    public boolean withdraw(double amount){
         checkDrawBalance= balance - amount;
-        if (checkDrawBalance<0){
-        //do nothing
+        if (checkDrawBalance<0|amount<0){
+            return false;
         }
         else{
-            balance=balance-amount;
+             balance=balance-amount;
+            return true;
         }
     }
 }
