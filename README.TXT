@@ -5,8 +5,23 @@ all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE:
+  JBank
+  
 PURPOSE OF PROJECT:
+  Part of  Subject of Object Oriented Programming in Univerisity of Indonesia
+  
 VERSION or DATE:
-HOW TO START THIS PROJECT:
+  -Latest Version 3.4.1 (9 March 2016)
+  
 AUTHORS:
-USER INSTRUCTIONS:
+  Erithiana Sisijoan Koesnadi
+  Akbar Sahata (Supervisor)
+
+Documentation Of Version:
+
+3.4.1
+  -Changed the getNextId() Logic in Customer class, Instead of starting from 1000, the ID for first customer is 1001
+  -Changed the Teller class main Program Logic, now accepting char input in main menu.
+  -Better Indentation.
+  -Added getDOB() method in Customer Class. 
+  
