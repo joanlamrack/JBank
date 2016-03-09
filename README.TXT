@@ -19,11 +19,11 @@ AUTHORS:
 
 Documentation Of Version:
 
+3.4.2
+  -Added Option to back to main menu after creating an account in Teller class
+
 3.4.1
   -Changed the getNextId() Logic in Customer class, Instead of starting from 1000, the ID for first customer is 1001
   -Changed the Teller class main Program Logic, now accepting char input in main menu.
   -Better Indentation.
   -Added getDOB() method in Customer Class. 
-  
-3.4.2
-  -Added Option to back to main menu after creating an account in Teller class
