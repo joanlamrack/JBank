@@ -3,14 +3,26 @@
  * Mewakili Kelas Akun yang berhubungan dengan balance dan tipe akun
  * 
  * @author Erithiana Sisijoan Koesnadi 
- * @version 3.4 (Classes Session)
+ * @version 3.4.1 (Classes Session: Indentation)
  */
 public class Account
 {
     // instance variables - replace the example below with your own
+    /**
+     * Deklarasi tipe Akun dengan tipe CHAR
+     */
     private char acctType;
+    
+    /**
+     * Deklarasi saldo dan pemeriksaan saldo dengan tipe double
+     */
     private double balance, checkDrawBalance;
+    
+    /**
+     * deklarasi untuk ID akun
+     */
     private String id;
+    
     /**
      * Constructor for objects of class Account
      */
@@ -19,6 +31,7 @@ public class Account
         acctType = 'S';
         balance=20.00;
     }
+    
     /**
      * Method constructor dengan input tipe akun dan saldo
      * @param type tipe akun yang akan dibuat
@@ -32,7 +45,8 @@ public class Account
             }
         }
     }
-      /**
+    
+    /**
      * Operasi deposit pada suatu akun, balance yang ada akan ditambahkan
      * dengan jumlah deposit.
      * Jika jumlah yang dimasukan bernilai minus
@@ -41,14 +55,18 @@ public class Account
      * @param  amount jumlah uang yang akan dimasukkan
      */
     public boolean deposit(double amount){
-        if(amount<0){return false;}
-        else
-        if (amount>0|amount!=0){
-        balance=balance + amount;
-        return true;
+        if(amount<0){
+            return false;
+        }
+            else if (amount>0|amount!=0){
+                balance=balance + amount;
+                return true;
+            }
+                else{
+                    return false;
+                }
     }
-    else{return false;}
-}
+    
      /**
      * Mengetahui tipe dari suatu akun, untuk menentukan sifat dari akun tersebut
      * 
@@ -57,6 +75,7 @@ public class Account
     public char getAcctType(){
         return acctType;
     }
+    
     /**
      * Mengetahui balance dari suatu akun saat ini
      * 
@@ -65,6 +84,7 @@ public class Account
     public double getBalance(){
        return balance;
     }
+    
      /**
      * Mengetahui ID dari suatu akun
      * 
@@ -73,6 +93,7 @@ public class Account
     public String getId(){
         return id;
     }
+    
     /**
      * Mengeset Balance berdasarkan uang yang ada, membuka tabungan dengan
      * dana awal
@@ -82,6 +103,7 @@ public class Account
     public void setBalance(double amount){
         balance = amount;
     }
+    
      /**
      * mengeset Id Akun, memasukkan id tersebut kedalam variabel
      * 
@@ -90,6 +112,7 @@ public class Account
     public void setID(String acctId){
         id = acctId;
     }
+    
      /**
      * Mengeset tipe dari suatu akun
      * 
@@ -99,6 +122,7 @@ public class Account
     public void setAcctType(char type){
         acctType = type;
     }
+    
     /**
      * Method untuk mengambil uang dalam suatu akun dengan jumlah sesuai input
      * uang dalam akun akan berkurang. jika jumlah yang diambil
@@ -115,4 +139,5 @@ public class Account
             return true;
         }
     }
+    
 }
