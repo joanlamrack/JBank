@@ -6,7 +6,7 @@ import java.util.Scanner;// Library untuk scanner
  * program akan looping selama pengguna belum menterminasi program
  * 
  * @author Erithiana Sisijoan Koesnadi
- * @version 3.4.1 (Classes Session: Effective Using of Scanner Section, Menu with char Input, Added Comment and indentation)
+ * @version 3.4.2 (Classes Session: Effective Using of Scanner Section, Menu with char Input, Added Comment and indentation, Added extra option)
  */
 public class Teller
 {
@@ -72,6 +72,20 @@ public class Teller
                                                       System.out.println("Jenis Akun    : " + c1.getAccount().getAcctType());
                                                       System.out.println("Saldo Saat ini: " + c1.getAccount().getBalance());
                                                       System.out.println("ID akun       : " + c1.getAccount().getId());
+                                                      
+                                                      //Pilihan untuk kembai ke menu utama
+                                                      System.out.println("Apakah Anda ingin Kembali ke menu utama? (y/n)");
+                                                      char menuUtama = inputreac.next().charAt(0);
+                                                 
+                                                        if (menuUtama=='y' | menuUtama=='Y'){
+                                                            System.out.println("Kembali ke menu utama....");
+                                                            loop=1;
+                                                        }
+                                                        else if (menuUtama=='n' | menuUtama=='N'){
+                                                            System.out.println("terima kasih karena telah mencoba Program Jbank. Terminasi program sekarang");
+                                                            loop=0;
+                                                        }
+                                                      
                                                   }
                                        
                                                 }

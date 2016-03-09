@@ -11,7 +11,7 @@ PURPOSE OF PROJECT:
   Part of  Subject of Object Oriented Programming in University of Indonesia
   
 VERSION or DATE:
-  -Latest Version 3.4.1 (9 March 2016)
+  -Latest Version 3.4.2 (9 March 2016)
   
 AUTHORS:
   Erithiana Sisijoan Koesnadi
@@ -25,3 +25,5 @@ Documentation Of Version:
   -Better Indentation.
   -Added getDOB() method in Customer Class. 
   
+3.4.2
+  -Added Option to back to main menu after creating an account in Teller class
