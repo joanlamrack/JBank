@@ -1,5 +1,7 @@
 import java.util.regex.Matcher; // library untuk regular expression, matcher dan pattern 
 import java.util.regex.Pattern;
+import java.text.DateFormat;
+import java.util.Date;
 /**
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
@@ -27,7 +29,7 @@ public class Customer
     /**
      * Variable untuk menyimpan tanggal lahir kustomer
      */
-    private String dateOfBirth;
+    private Date dateOfBirth;
     
     /**
      * Variable untuk menyimpan tanggal lahir kustomer
@@ -78,7 +80,7 @@ public class Customer
      * @param lastName nama belakang
      * @param dateOfBirth tanggal tempat lahir
      */
-    public Customer(String firstName, String lastName, String dateOfBirth){
+    public Customer(String firstName, String lastName, Date dateOfBirth){
         this.firstName=firstName;
         this.lastName=lastName;
         this.dateOfBirth=dateOfBirth;
@@ -93,7 +95,7 @@ public class Customer
      public Customer(String firstName, String lastName){
         this.firstName=firstName;
         this.lastName=lastName;
-        this.dateOfBirth="none";
+        this.dateOfBirth=null;
     }
     
      /**
@@ -256,7 +258,7 @@ public class Customer
      * 
      * @return tanggal lahir kustomer
      */
-    public String getDOB(){
+    public Date getDOB(){
         return dateOfBirth;
     }
     

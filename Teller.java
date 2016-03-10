@@ -1,4 +1,10 @@
 import java.util.Scanner;// Library untuk scanner
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.text.ParseException;
 /**
  * Merepresentasikan Akun teller, yang dapat berinteraksi dengan bank, kustomer dan akun.
  * 
@@ -15,6 +21,21 @@ public class Teller
      * Awal dari Program
      */
         public static void main(String[] args){
+        //trial space
+        /*
+        Date start=new GregorianCalendar(2016, 3, 10, 7,0,0).getTime();
+        Date close=new GregorianCalendar(2016, 3, 10, 21,30,0).getTime();
+        */
+        //SimpleDateFormat df = new SimpleDateFormat("hh:mm a");
+        //String start1 = df.format(start);
+        //String close1 = df.format(close);
+        
+        
+        String bank = Bank.getHoursOfOperation();
+       
+        //System.out.println(Bank.getCloseOpenTime());
+        System.out.println(bank);
+            
         int loop=0;                                                                 //deklarasi dan Instalasi parameter melanjutkan atau memberhentikan loop do while
             do{
                       loop=0;                                                       //instalasi ulang parameter agar tidak terjadi infinite loop
@@ -33,11 +54,17 @@ public class Teller
                                       System.out.println("Masukkan nama Keluarga");
                                       String namaBelakang = inputreac.nextLine();   //variabel untuk menyimpan input nama belakang user (berjenis String)
                                       
-                                      System.out.println("Masukkan tanggal lahir");
-                                      String DOB = inputreac.nextLine();            //variabel untuk menyimpan input tanggal lahir user (berjenis string)
+                                      System.out.println("Masukkan tanggal lahir (1-31)");
+                                      int day = inputreac.nextInt();            //variabel untuk menyimpan input tanggal lahir user (berjenis string)
                                       
-                                      Customer c1= new Customer (namaDepan, namaBelakang, DOB); //membuat object kustomer baru dengan input yang ada
+                                      System.out.println("Masukkan bulan lahir (1-12)");
+                                      int month = inputreac.nextInt();
                                       
+                                      System.out.println("Masukkan tahun lahir (1995-2000)");
+                                      int year= inputreac.nextInt();
+
+                                      Customer c1= new Customer (namaDepan, namaBelakang, ( new GregorianCalendar(year, month, day).getTime())); //membuat object kustomer baru dengan input yang ada
+
                                             System.out.println("Apakah Anda ingin membuat Akun? (y/n)");
                                             char membuatAkun = inputreac.next().charAt(0);
                                             //Jika User ingin membuat akun

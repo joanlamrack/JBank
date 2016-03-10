@@ -1,4 +1,9 @@
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.text.ParseException;
 /**
  * Mewakili kelas Bank yang mengandung informasi mengenai Bank
  * 
@@ -16,7 +21,7 @@ public class Bank
     /**
      * variabel menyimpan waktu tutup bank
      */
-    private static String closeTime;
+    private static Date closeTime = new GregorianCalendar(2016, 3, 10, 21,30,0).getTime();
     
     /**
      * variabel menyimpan waktu tutup bank
@@ -42,7 +47,7 @@ public class Bank
     /**
      * variabel menyimpan waktu buka bank
      */
-    private static String startTime;
+    private static Date startTime;
     
     /**
      * variabel menyimpan situs website bank
@@ -114,7 +119,10 @@ public class Bank
      * @return String   jam operasi bank
      */
     public static String getHoursOfOperation(){
-        return null;
+        SimpleDateFormat df = new SimpleDateFormat("hh:mm a");
+        String start1 = df.format(getStartTime());
+        String close1 = df.format(getCloseTime());
+        return start1 + " TO " + close1;
     }
     
     /**
@@ -224,9 +232,35 @@ public class Bank
     public static void setPremium(double rate){
        premiumInterestRate=rate;
     }
+    
     /*
     public static int getNumOfCurrentCustomer(){
         return numOfCurrentCustomer;
     }
     */
+    public static Date getStartTime(){
+        return startTime;
+    }
+   
+    public static void setStartTime(Date Time){
+        startTime=Time;
+    }
+    
+    public static Date getCloseTime(){
+        return closeTime;
+    }
+   
+    public static void setCloseTime(Date Time){
+        closeTime=Time;
+    }
+    
+    public static void setCloseOpenTime(Date open, Date close){
+        setCloseTime(close);
+        setStartTime(open);
+    }
+
+    
+    public static String getCloseOpenTime(){
+        return getStartTime() + " TO " + getCloseTime();
+    }
 }
