@@ -26,4 +26,9 @@ Documentation Of Version:
   -Changed the getNextId() Logic in Customer class, Instead of starting from 1000, the ID for first customer is 1001
   -Changed the Teller class main Program Logic, now accepting char input in main menu.
   -Better Indentation.
-  -Added getDOB() method in Customer Class. 
+  -Added getDOB() method in Customer Class.
+
+4.2.1
+
+  -Standard Module 4 task 1 & 2 done with the documentation
+  -Added function for operational hour: cant make account when in non-operational hour in Teller class
