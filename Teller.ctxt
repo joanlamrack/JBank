@@ -4,4 +4,11 @@ comment0.target=void\ main(java.lang.String[])
 comment0.text=\r\n\ Awal\ dari\ Program\r\n
 comment1.params=
 comment1.target=Teller()
-numComments=2
+comment1.text=\r\n\ Kelas\ Konstruktor\ untuk\ Teller\r\n
+comment2.params=jamBuka\ menitBuka\ jamTutup\ menitTutup
+comment2.target=void\ setCloseOpenTime(int,\ int,\ int,\ int)
+comment2.text=\r\n\ Method\ untuk\ mengeset\ waktu\ buka\ dan\ tutup\ JBank\ dari\ Teller\r\n\ Cara\ penggunaaan\:\r\n\ jika\ Jbank\ buka\ dari\ jam\ 07\:59\ hingga\ jam\ 21\:00,\ maka\ jamBuka\=7,\ menitBuka\=59,\ jamTutup\=21,\ menitTutup\=0,\ \r\n\ \r\n\ @param\ jamBuka\ satuan\ jam\ buka\ bank\r\n\ @param\ menitBuka\ satuan\ menit\ buka\ bank\r\n\ @param\ jamTutup\ satuan\ jam\ tutup\ bank\r\n\ @param\ menitTutup\ satuan\ menit\ tutup\ bank\r\n
+comment3.params=
+comment3.target=java.lang.String\ getHoursOfOperation()
+comment3.text=\r\n\ Method\ untuk\ mengembalikan\ waktu\ buka\ dan\ tutup\ JBank\ dari\ Teller\r\n\ \r\n\ @return\ Jam\ buka\ bank\ TO\ jam\ tutup\ bank\r\n
+numComments=4

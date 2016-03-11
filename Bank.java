@@ -8,7 +8,7 @@ import java.text.ParseException;
  * Mewakili kelas Bank yang mengandung informasi mengenai Bank
  * 
  * @author Erithiana Sisijoan Koesnadi
- * @version 3.4.1 (Classes Session: fixed getNextid() Logic)
+ * @version 4.2.1 (String and Date)
  */
 public class Bank
 {
@@ -21,10 +21,10 @@ public class Bank
     /**
      * variabel menyimpan waktu tutup bank
      */
-    private static Date closeTime = new GregorianCalendar(2016, 3, 10, 21,30,0).getTime();
+    private static Date closeTime;
     
     /**
-     * variabel menyimpan waktu tutup bank
+     * variabel menyimpan bunga dari akun investment
      */
     private static double investmentInterestRate; 
     
@@ -114,7 +114,7 @@ public class Bank
     }
     
      /**
-     * Menghitung Lama bank beroperasi dalam satuan jam 
+     * Mereturn jam operasional Bank dalam bentuk string
      * 
      * @return String   jam operasi bank
      */
@@ -238,29 +238,61 @@ public class Bank
         return numOfCurrentCustomer;
     }
     */
+   
+    /**
+     * Method untuk mengembalikan Waktu buka Bank dalam bentuk date
+     * 
+     * @return waktu jam buka
+     */
     public static Date getStartTime(){
         return startTime;
     }
    
-    public static void setStartTime(Date Time){
-        startTime=Time;
+    /**
+     * Method untuk mengeset Waktu buka Bank. Dengan parameter jam dan menit dalam bentuk integer.
+     * Misal: jika bank buka jam 07:00, maka jam=7, menit=0
+     * 
+     * @param jam jam berapa bank buka 
+     * @param menit Menit keberapa dia akan buka 
+     */
+    public static void setStartTime(int jam, int menit){
+        Calendar currentTime = new GregorianCalendar();
+        startTime=new GregorianCalendar(currentTime.get(Calendar.YEAR), currentTime.get(Calendar.MONTH), currentTime.get(Calendar.DATE), jam, menit).getTime();
     }
     
+    /**
+     * Method untuk mengembalikan Waktu tutup Bank dalam bentuk date
+     * 
+     * @return waktu jam tutup
+     */
     public static Date getCloseTime(){
         return closeTime;
     }
-   
-    public static void setCloseTime(Date Time){
-        closeTime=Time;
+    
+    /**
+     * Method untuk mengeset Waktu tutup Bank. Dengan parameter jam dan menit dalam bentuk integer.
+     * Misal: jika bank tutup jam 21:30, maka jam=21, menit=30
+     * 
+     * @param jam jam berapa bank tutup 
+     * @param menit Menit keberapa akan tutup 
+     */
+    public static void setCloseTime(int jam, int menit){
+        Calendar currentTime = new GregorianCalendar();
+        closeTime=new GregorianCalendar(currentTime.get(Calendar.YEAR), currentTime.get(Calendar.MONTH), currentTime.get(Calendar.DATE), jam, menit).getTime();
     }
     
-    public static void setCloseOpenTime(Date open, Date close){
-        setCloseTime(close);
-        setStartTime(open);
+    /**
+     * Method lokal untuk mengeset Waktu tutup dan buka bank dengan input integer. input ini kemudian di pass ke method lainnya dengan fungsi mengeset
+     * waktu buka dan tutup secara terpisah.
+     * 
+     * @param jamBuka jam berapa bank buka 
+     * @param menitBuka Menit keberapa dia akan buka 
+     * @param jamTutup jam berapa bank tutup 
+     * @param menitTutup Menit keberapa akan tutup 
+     */
+    public static void setCloseOpenTime(int jamBuka, int menitBuka, int jamTutup,int menitTutup){
+        setCloseTime(jamTutup, menitTutup);
+        setStartTime(jamBuka, menitBuka);
     }
-
     
-    public static String getCloseOpenTime(){
-        return getStartTime() + " TO " + getCloseTime();
-    }
 }

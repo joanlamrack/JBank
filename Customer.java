@@ -6,7 +6,7 @@ import java.util.Date;
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
  * @author Erithiana Sisijoan
- * @version 3.4.1 (Classes Session: Added getDOB method)
+ * @version 4.2.1 (String and Date)
  */
 public class Customer
 {
@@ -75,7 +75,7 @@ public class Customer
     }
     
      /**
-     * Constructor method dengan input nama depan, nama belakang dan tanggal lahir
+     * Constructor method dengan input nama depan, nama belakang dan tanggal lahir, serta mengambil ID secara langsung
      * @param firstName nama depan
      * @param lastName nama belakang
      * @param dateOfBirth tanggal tempat lahir
