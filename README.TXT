@@ -11,7 +11,7 @@ PURPOSE OF PROJECT:
   Part of  Subject of Object Oriented Programming in University of Indonesia
   
 VERSION or DATE:
-  -Latest Version 3.4.2 (9 March 2016)
+  -Latest Version 4.2.1 (11 March 2016)
   
 AUTHORS:
   Erithiana Sisijoan Koesnadi
