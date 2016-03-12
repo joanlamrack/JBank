@@ -135,7 +135,7 @@ public class Account
             return false;
         }
         else{
-             balance=balance-amount;
+            this.balance=balance-amount;
             return true;
         }
     }

@@ -11,13 +11,20 @@ PURPOSE OF PROJECT:
   Part of  Subject of Object Oriented Programming in University of Indonesia
   
 VERSION or DATE:
-  -Latest Version 4.2.1 (11 March 2016)
+  -Latest Version 4.3 (12 March 2016)
   
 AUTHORS:
   Erithiana Sisijoan Koesnadi
   Akbar Sahata (Supervisor)
 
 Documentation Of Version:
+
+4.3
+  -Standard Module 4 task 3 done with documentation, only teller class modified
+
+4.2.1
+  -Standard Module 4 task 1 & 2 done with the documentation
+  -Added function for operational hour: cant make account when in non-operational hour in Teller class
 
 3.4.2
   -Added Option to back to main menu after creating an account in Teller class
@@ -27,8 +34,3 @@ Documentation Of Version:
   -Changed the Teller class main Program Logic, now accepting char input in main menu.
   -Better Indentation.
   -Added getDOB() method in Customer Class.
-
-4.2.1
-
-  -Standard Module 4 task 1 & 2 done with the documentation
-  -Added function for operational hour: cant make account when in non-operational hour in Teller class
