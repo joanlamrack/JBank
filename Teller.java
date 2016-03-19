@@ -13,7 +13,7 @@ import java.math.*;
  * program akan looping selama pengguna belum menterminasi program
  * 
  * @author Erithiana Sisijoan Koesnadi
- * @version 4.3 (String and Date)
+ * @version 5.4 (Array)
  */
 public class Teller
 {
@@ -28,7 +28,7 @@ public class Teller
         Bank.getMaxNumOfCustomers();
         
         System.out.println("Max num of customer" +Bank.getMaxNumOfCustomers());
-        
+        //membuat 3 akun dan check statusnya
             Customer d1= new Customer ("hehe", "haha", ( new GregorianCalendar(12, 5, 12).getTime())); //membuat object kustomer baru dengan input yang ada
             String a = (Bank.addCustomer(d1)==true) ? "Customer ditambahkan": "Customer tidak berhasil ditambahkan";
             System.out.println(a);
@@ -41,13 +41,13 @@ public class Teller
             a = (Bank.addCustomer(d3)==true) ? "Customer ditambahkan": "Customer tidak berhasil ditambahkan";
             System.out.println(a);
 
-       System.out.println("Print semua data");
+       System.out.println("Print semua data");// check apakah semua akun di tambahkan ke array
         for (int i=0; i<Bank.getNumCust();i++){
             System.out.println(Bank.customer[i].getCustomerName());
             System.out.println(Bank.customer[i].getDOB());
             System.out.println(Bank.customer[i].getCustid());
         }
-        
+        //percobaan untuk method search getCustomer dari array, dengan parameter 1001 untuk id
         System.out.println("Ambil kustomer berdasarkan ID 1001");
         System.out.println(Bank.getCustomer(1003).getCustomerName()+"\nTrial space selesai\n\n");
         
@@ -100,8 +100,8 @@ public class Teller
                                           int year= inputreac.nextInt();            //variabel untuk menyimpan input Tahun lahir user (berjenis int)
                                          
                                           Customer c1= new Customer (namaDepan, namaBelakang, ( new GregorianCalendar(year, month, day).getTime())); //membuat object kustomer baru dengan input yang ad
-                                          String status = (Bank.addCustomer(c1)==true) ? "Customer ditambahkan": "Customer tidak berhasil ditambahkan";
-                                          System.out.println(status);
+                                          String status = (Bank.addCustomer(c1)==true) ? "Customer ditambahkan": "Customer tidak berhasil ditambahkan";// tambahkan customer ke array
+                                          System.out.println(status);// print status
                                           
                                                 System.out.println("Apakah Anda ingin membuat Akun? (y/n)");
                                                 char membuatAkun = inputreac.next().charAt(0);

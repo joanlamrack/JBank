@@ -11,13 +11,15 @@ PURPOSE OF PROJECT:
   Part of  Subject of Object Oriented Programming in University of Indonesia
   
 VERSION or DATE:
-  -Latest Version 4.3 (12 March 2016)
+  -Latest Version 5.4 (19 March 2016)
   
 AUTHORS:
   Erithiana Sisijoan Koesnadi
   Akbar Sahata (Supervisor)
 
 Documentation Of Version:
+5.4
+  -Standard Module 5 task 4 done, with all classes modified. Added jar Folder to contain created jar file
 
 4.3
   -Standard Module 4 task 3 done with documentation, only teller class modified
