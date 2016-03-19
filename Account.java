@@ -3,7 +3,7 @@
  * Mewakili Kelas Akun yang berhubungan dengan balance dan tipe akun
  * 
  * @author Erithiana Sisijoan Koesnadi 
- * @version 3.4.1 (Classes Session: Indentation)
+ * @version 5.4 (Arrays)
  */
 public class Account
 {
@@ -23,13 +23,18 @@ public class Account
      */
     private String id;
     
+    public Account(){
+        setBalance(1000);
+        setAcctType('L');
+    }
+    
     /**
      * Constructor for objects of class Account
      */
-    public Account()
-    {
-        acctType = 'S';
-        balance=20.00;
+    public Account(Customer cust, double balance, char type){
+        setBalance(balance);
+        setAcctType(type);
+        this.id= Integer.toString(cust.getCustomerId())+type;
     }
     
     /**
@@ -38,12 +43,8 @@ public class Account
      * @param amount jumlah saldo awal
      */
     public Account(char type, double amount){
-        if(type=='S'|type=='O'|type=='L'|type=='I'){
-            if(amount>0){
-                acctType=type;
-                balance=amount;
-            }
-        }
+        setBalance(amount);
+        setAcctType(type);
     }
     
     /**
@@ -101,16 +102,9 @@ public class Account
      * @param amount jumlah pertama kali membuka tabungan
      */
     public void setBalance(double amount){
-        balance = amount;
-    }
-    
-     /**
-     * mengeset Id Akun, memasukkan id tersebut kedalam variabel
-     * 
-     * @param acctId ID dalam bentuk string
-     */
-    public void setID(String acctId){
-        id = acctId;
+        if(amount>0){
+                balance=amount;
+        }
     }
     
      /**
@@ -120,7 +114,9 @@ public class Account
      * 'O' (tipe overdraft), 'S'(tipe saving/biasa) dan 'I' (investment)
      */
     public void setAcctType(char type){
-        acctType = type;
+         if(type=='S'|type=='O'|type=='L'|type=='I'){
+             acctType = type;
+         }
     }
     
     /**

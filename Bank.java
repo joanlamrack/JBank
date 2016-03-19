@@ -4,11 +4,12 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.ParseException;
+import java.util.*;
 /**
  * Mewakili kelas Bank yang mengandung informasi mengenai Bank
  * 
  * @author Erithiana Sisijoan Koesnadi
- * @version 4.2.1 (String and Date)
+ * @version 5.4 (Arrays)
  */
 public class Bank
 {
@@ -62,8 +63,8 @@ public class Bank
     /**
      * variabel menyimpan jumlah maksimal kustomer yang dapat dibuat oleh bank
      */
-    public static int maxNumOfCustomers= 20;
-    
+    private static int maxNumOfCustomers;
+
     /**
      * variabel menyimpan nama bank
      */
@@ -80,6 +81,29 @@ public class Bank
     private static int nextID=1000;
     
     /**
+     * variabel untuk array customer
+     */
+    public static Customer[] customer; 
+    
+    /**
+     * Static Initializer block
+     * 
+     * mengeset jumlah maximum customer yang dapat di buat dalam array
+     */
+    static {
+        System.out.println("Enter Max number of customer");
+        Scanner trial = new Scanner(System.in);
+        maxNumOfCustomers=trial.nextInt();
+        
+        customer= new Customer[maxNumOfCustomers];
+    }
+    
+    /**
+     * untuk Mengeck jumlah custoer yang dibuat
+     */
+    public static int numCust;
+    
+    /**
      * Constructor for objects of class Bank
      */
     private Bank(){
@@ -94,12 +118,64 @@ public class Bank
         return bankAddress;
     }
     */
+    
+    /**
+     * Method untuk menambahkan objek customer ke dalam array
+     * 
+     * @param cust kustomer yang akan ditambahkan
+     * @return status dari method, true jika ditambakan, false jika tidak
+     */
+    public static boolean addCustomer(Customer cust){
+            if (numCust<maxNumOfCustomers){
+                customer[numCust]=cust;
+                numCust++;
+                return true;
+            }
+            else {
+                return false;
+            }
+    }
+   
+    /**
+     * method tambahan untuk mengambil variable numCust
+     * 
+     * @return jumlah kustomer saat ini
+     */
+    public static int getNumCust(){
+        return numCust;
+    }
+    
+    /**
+     * Method to get customer objek based on ID
+     * 
+     * @param custID cust di yang akan dicari.
+     * @return akun kustomer dengan id yang sama dengan parameter
+     */
+    public static Customer getCustomer(int custID){
+        for (int i=0; i<maxNumOfCustomers; i++){
+            if (customer[i]!=null){
+                if (customer[i].getCustomerId()==custID){
+                    return customer[i];
+                }
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * method untuk ambil nilai integer dari maxNumOfCustomer
+     * 
+     * @return jumlah maksimum kustomer yang dapat dibuat
+     */
+    public static int getMaxNumOfCustomers(){
+        return maxNumOfCustomers;
+    }
+    
     /**
      * Mengambil data  persenan bunga
      * 
      * @return double   bunga bank
      */
-    
     public static double getCreditRate(){
         return creditInterestRate;
     }
@@ -131,7 +207,7 @@ public class Bank
      * @return int  ID terakhir
      */
     public static int getLastID(){
-    return lastCustID;
+        return lastCustID;
     }
     
      /**

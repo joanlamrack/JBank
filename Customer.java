@@ -6,7 +6,7 @@ import java.util.Date;
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
  * @author Erithiana Sisijoan
- * @version 4.2.1 (String and Date)
+ * @version 5.4 (Arrays)
  */
 public class Customer
 {
@@ -14,7 +14,7 @@ public class Customer
     /**
      * membuat objek Account dengan nama accounts
      */
-    private Account accounts =new Account();
+    private Account[] accounts=new Account[4];
 
     /**
      * Variable untuk menyimpan nama kota
@@ -65,15 +65,7 @@ public class Customer
      * Variable untuk menyimpan Kode pos kustomer
      */
     private String zipOrPostalCode;
-    
-    /**
-     * Constructor for objects of class Customer
-     */
-    public Customer()
-    {
-        // initialise instance variables
-    }
-    
+   
      /**
      * Constructor method dengan input nama depan, nama belakang dan tanggal lahir, serta mengambil ID secara langsung
      * @param firstName nama depan
@@ -96,6 +88,7 @@ public class Customer
         this.firstName=firstName;
         this.lastName=lastName;
         this.dateOfBirth=null;
+        this.custId=Bank.getNextID();
     }
     
      /**
@@ -109,12 +102,39 @@ public class Customer
     }
     
     /**
-     * mengambil account yang tersimpan
+     * mengambil account yang tersimpan dari array
      * 
+     * @param type tipe akun yang akan diambil dari array
      * @return  akun yang tersimpan
      */
-    public Account getAccount(){
-        return accounts;
+    public Account getAccount(char type){
+        for (int i=0; i<4; i++){
+                if(accounts[i]!=null){  
+                   if(type==accounts[i].getAcctType()){
+                       return accounts[i];
+                   }
+                }
+         }
+        return null;
+    }
+    
+    /**
+     * Menghapus akun dari kustomer dari array
+     * 
+     * @param type tipe akun yang akan dihapus dari array
+     * @return mengembalikan status dari mrhod, jika true maka akun terhapus, jika tidak makan akun tidak terhapus
+     */
+    public boolean removeAccount(char type){
+        for (int i=0; i<4; i++){
+                if(accounts[i]!=null){  
+                   if(type==accounts[i].getAcctType()){
+                       accounts[i]=null;
+                       this.numberOfCurrentAccounts--;
+                       return true;
+                   }
+                }
+         }
+        return false;
     }
     
     /**
@@ -122,7 +142,7 @@ public class Customer
      * 
      * @return  ID dari customer
      */
-    private int getCustomerId(){
+    public int getCustomerId(){
         return custId;
     }
     
@@ -225,13 +245,47 @@ public class Customer
     }
     
     /**
-     * To set an account
+     * Mengassign akun customer ke akun. akun yang di assign pada customer tidak boleh memiliki ID sama
      * 
      * @param  akun nama akun yang akan ditambah
-     * @return none
+     * @return status dari method, true jika akun ditambahkan, false jika akun tidak di tambahkan
      */
-    public void setAccount(Account akun){
-        accounts=akun;
+    public boolean addAccount(Account akun){
+        /**
+         * Variabel lokal untuk boolean akun dimasukan ke array atau tidak
+         */
+        boolean accountAdded=false;
+        if (getNumOfAccounts()<5){
+            if(checkMultiAccount(akun)==false){
+                accounts[numberOfCurrentAccounts]=akun;
+                numberOfCurrentAccounts++;
+                accountAdded=true;
+            }
+            else if (checkMultiAccount(akun)==true){
+                //do nothing
+            }
+        }
+        else{
+            return accountAdded;
+        }
+        return accountAdded;
+    }
+    
+    /**
+     * Check for multiple account type
+     * 
+     * @param akun account yang akan dicheck tipenya
+     * @return status dari method, true jika menemukan akun yang sama, false jika tidak ada akun yang sama.
+     */
+    public boolean checkMultiAccount(Account akun){
+         for (int i=0; i<4; i++){
+                if(accounts[i]!=null){  
+                   if(akun.getAcctType()==accounts[i].getAcctType()){
+                       return true;
+                   }
+                }
+         }
+         return false;
     }
     
     /**
