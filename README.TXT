@@ -11,13 +11,16 @@ PURPOSE OF PROJECT:
   Part of  Subject of Object Oriented Programming in University of Indonesia
   
 VERSION or DATE:
-  -Latest Version 5.4 (19 March 2016)
+  -Latest Version 6.8 (27 March 2016)
   
 AUTHORS:
   Erithiana Sisijoan Koesnadi
   Akbar Sahata (Supervisor)
 
 Documentation Of Version:
+6.8
+  -Temporary Standard module 6 task 8 done. added class Sandbox for trial space.
+
 5.4
   -Standard Module 5 task 4 done, with all classes modified. Added jar Folder to contain created jar file
 

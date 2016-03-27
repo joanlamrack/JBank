@@ -10,11 +10,10 @@ import java.util.Date;
  */
 public class Customer
 {
-    // instance variables - replace the example below with your own
     /**
      * membuat objek Account dengan nama accounts
      */
-    private Account[] accounts=new Account[4];
+    public Account[] accounts=new Account[4];
 
     /**
      * Variable untuk menyimpan nama kota
@@ -110,7 +109,7 @@ public class Customer
     public Account getAccount(char type){
         for (int i=0; i<4; i++){
                 if(accounts[i]!=null){  
-                   if(type==accounts[i].getAcctType()){
+                   if(type==getAcctType(accounts[i])){
                        return accounts[i];
                    }
                 }
@@ -127,7 +126,7 @@ public class Customer
     public boolean removeAccount(char type){
         for (int i=0; i<4; i++){
                 if(accounts[i]!=null){  
-                   if(type==accounts[i].getAcctType()){
+                   if(type==getAcctType(accounts[i])){
                        accounts[i]=null;
                        this.numberOfCurrentAccounts--;
                        return true;
@@ -249,6 +248,7 @@ public class Customer
      * 
      * @param  akun nama akun yang akan ditambah
      * @return status dari method, true jika akun ditambahkan, false jika akun tidak di tambahkan
+     *
      */
     public boolean addAccount(Account akun){
         /**
@@ -280,12 +280,37 @@ public class Customer
     public boolean checkMultiAccount(Account akun){
          for (int i=0; i<4; i++){
                 if(accounts[i]!=null){  
-                   if(akun.getAcctType()==accounts[i].getAcctType()){
+                   if(getAcctType(akun)==getAcctType(accounts[i])){
                        return true;
                    }
                 }
          }
          return false;
+    }
+   
+   /**
+     * Mengetahui tipe dari suatu akun, untuk menentukan sifat dari akun tersebut
+     * 
+     * @return tipe dari akun
+     */
+   public char getAcctType(Account akun){
+        char acctType='M';
+        if(akun instanceof Savings==true && akun instanceof Investment==false){
+            acctType='S';
+        }
+        else if(akun instanceof Investment==true && akun instanceof Investment==true){
+            acctType='I';
+        } 
+        else if(akun instanceof OverDraftProtection==true){
+            acctType='O';
+        }
+        else if(akun instanceof LineOfCredit==true){
+            acctType='L';
+        }
+        else{
+            //do nothing
+        }
+        return acctType;
     }
     
     /**
