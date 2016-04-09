@@ -80,15 +80,6 @@ public abstract class Account
      * melebihi jumlah uang dalam akun, transaksi ditolak.
      * @param amount jumlah uang yang akan di ambil
      */
-    public boolean withdraw(double amount){
-        checkDrawBalance= balance - amount;
-        if (checkDrawBalance<0|amount<0){
-            return false;
-        }
-        else{
-            this.balance=balance-amount;
-            return true;
-        }
-    }
+    public abstract boolean withdraw(double amount);
     
 }

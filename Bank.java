@@ -99,7 +99,7 @@ public class Bank
     }
     
     /**
-     * untuk Mengeck jumlah custoer yang dibuat
+     * untuk Mengecek jumlah customer yang dibuat
      */
     public static int numCust;
     

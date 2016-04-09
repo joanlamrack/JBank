@@ -2,8 +2,8 @@
 /**
  * Write a description of class OverDraftProtection here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author erithiana sisijoan
+ * @version 6.8
  */
 public class OverDraftProtection extends Checking
 {

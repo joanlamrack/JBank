@@ -12,9 +12,7 @@ public abstract class Checking extends Account
      */
     protected double monthlyFee;
     
-    protected void feeAssessment(){
-    
-    }
+    protected abstract void feeAssessment();
     
     /**
      * method untuk mereset biaya bulanan

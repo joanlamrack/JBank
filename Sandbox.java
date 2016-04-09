@@ -6,6 +6,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.ParseException;
 import java.math.*;
+import java.awt.*;
+import java.awt.event.*;
 /**
  * Kelas khusus coba-coba
  * 
@@ -25,17 +27,17 @@ import java.math.*;
                 c1.addAccount(invest);
                 c1.addAccount(over);
                 c1.addAccount(line);
-                
+                /*
                 c1= new Customer("Heya", "Sisijoan", ( new GregorianCalendar(1995, 8, 1).getTime()));
                 Bank.addCustomer(c1);
                 saving= new Savings(c1, 1000);
                 invest= new Investment(c1, 20000, 6);
                 c1.addAccount(saving);
                 c1.addAccount(invest);
+                */
+                saving.addDailyInterest(280);
+                invest.addDailyInterest(280);
                 
-                //saving.addDailyInterest(280);
-                //invest.addDailyInterest(280);
-                /*
                 System.out.println("balance setelah 280 hari     : " + invest.getBalance());
                 
                 System.out.println("Akun anda berhasil dibuat. Periksa kembali data dibawah ini");
@@ -74,7 +76,7 @@ import java.math.*;
                 System.out.println("balance loc      : " + line.getBalance());
                 System.out.println("fee      : " + line.getMonthlyFee());
                 
-                
+                /*
                 System.out.println("status      : " + c1.addAccount(saving));
                 System.out.println("jenis akun saving adalah      : " + c1.getAcctType(saving));
                 System.out.println("status      : " + c1.addAccount(saving));
@@ -87,7 +89,7 @@ import java.math.*;
                 System.out.println("jenis akun saving adalah      : " + c1.getAcctType(line));
                 System.out.println("status      : " + c1.addAccount(line));
                 System.out.println("jenis akun saving adalah      : " + c1.getAcctType(line));
-                */
+             /*
              for (int i=0; i<Bank.getNumCust();i++){
                 System.out.println("Nama Kustomer: "+ Bank.customer[i].getCustomerName());
                 System.out.println("Tanggal lahir: "+Bank.customer[i].getDOB());
@@ -100,6 +102,7 @@ import java.math.*;
             }
             
             System.out.println("\n\n");
+            */
        }
     }
-}
+

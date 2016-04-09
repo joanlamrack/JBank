@@ -42,7 +42,7 @@ public class Savings extends Account
      */
     public boolean withdraw(double amount){
         double checkDrawBalance= balance - amount;
-        if (checkDrawBalance<0|amount<0){
+        if (checkDrawBalance<0||amount<0){
             return false;
         }
         else{
