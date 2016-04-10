@@ -5,7 +5,7 @@ import java.awt.*;
  * , Merupakan child dari JFrame
  * 
  * @author erithiana sisijoan 
- * @version 7.3
+ * @version 7.3.1
  */
 public class ATMGUI extends JFrame
 {
@@ -14,18 +14,24 @@ public class ATMGUI extends JFrame
      */
     public JLabel customerLabel;
     public JLabel amountLabel;
+    
     public JRadioButton tipeAkunSaving;
     public JRadioButton tipeAkunInvestment;
     public JRadioButton tipeAkunLineOfCredit;
     public JRadioButton tipeAkunOverdraft;
+    
     public JTextField customerText;
     public JTextField amountText;
     public JTextArea textAreaMain;
+    
     public JButton deposit;
     public JButton withdraw;
     public JButton exit;
+    public JButton total;
+    
     public ButtonGroup radioGroup;
     public ButtonGroup buttonGroup;
+    
     public JFrame frame;
     
     /**
@@ -47,7 +53,7 @@ public class ATMGUI extends JFrame
         
         //Membuat Panel-panel untuk mengelompokkan Komponen
         JPanel buttonPanel= new JPanel();
-        buttonPanel.setLayout(new BorderLayout());
+        buttonPanel.setLayout(new GridLayout(0,1));
         JPanel checkboxPanel= new JPanel();
         checkboxPanel.setLayout(new BoxLayout(checkboxPanel, BoxLayout.Y_AXIS));
         JPanel infoPanel= new JPanel();
@@ -76,12 +82,14 @@ public class ATMGUI extends JFrame
         //Membuat Button
         deposit= new JButton("Deposit");
         withdraw= new JButton("Withdraw");
+        total= new JButton("Total");
         exit= new JButton("Exit");
         
         //Menambahkan JButton ke ButtonPanel
-        buttonPanel.add(deposit, BorderLayout.PAGE_START);
-        buttonPanel.add(withdraw, BorderLayout.CENTER);
-        buttonPanel.add(exit, BorderLayout.PAGE_END);
+        buttonPanel.add(deposit);
+        buttonPanel.add(withdraw);
+        buttonPanel.add(total);
+        buttonPanel.add(exit);
         
         //Menambahkan JRadioButton ke CheckBoxPanel
         checkboxPanel.add(tipeAkunSaving);
@@ -116,6 +124,7 @@ public class ATMGUI extends JFrame
         //Menambahkan ButtonHandler
         deposit.addActionListener(new ButtonHandler(this));
         withdraw.addActionListener(new ButtonHandler(this));
+        total.addActionListener(new ButtonHandler(this));
     }
     
     /**
