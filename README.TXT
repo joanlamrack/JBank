@@ -11,19 +11,22 @@ PURPOSE OF PROJECT:
   Part of  Subject of Object Oriented Programming in University of Indonesia
   
 VERSION or DATE:
-  -Latest Version 7.3.1 (10 April 2016)
+  -Latest Version 8.7 (16 April 2016)
   
 AUTHORS:
   Erithiana Sisijoan Koesnadi
   Akbar Sahata (Supervisor)
 
 Documentation Of Version:
+8.7
+  -Temporary Standard Module 8 task 7 done.
+
 7.3.1
   -Added Total dan ButtonHandler Algorithm.
 
 
 7.3
-  -Temporary Standard module 6 task 8 done.
+  -Temporary Standard module 7 task 3 done.
   -Added ATMGUI, ButtonHandler, and WindowHandler Class
 
 6.8
