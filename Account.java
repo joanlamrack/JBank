@@ -3,7 +3,7 @@
  * Mewakili Kelas Akun yang berhubungan dengan balance dan tipe akun
  * 
  * @author Erithiana Sisijoan Koesnadi 
- * @version 5.4 (Arrays)
+ * @version 8.7
  */
 public abstract class Account
 {
@@ -80,6 +80,5 @@ public abstract class Account
      * melebihi jumlah uang dalam akun, transaksi ditolak.
      * @param amount jumlah uang yang akan di ambil
      */
-    public abstract boolean withdraw(double amount);
-    
+    public abstract void withdraw(double amount)throws AmountOverDrawnException;   
 }

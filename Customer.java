@@ -6,7 +6,7 @@ import java.util.Date;
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
  * @author Erithiana Sisijoan
- * @version 5.4 (Arrays)
+ * @version 8.7
  */
 public class Customer
 {
@@ -106,7 +106,7 @@ public class Customer
      * @param type tipe akun yang akan diambil dari array
      * @return  akun yang tersimpan
      */
-    public Account getAccount(char type){
+    public Account getAccount(char type)throws AccountTypeNotFoundException{
         for (int i=0; i<4; i++){
                 if(accounts[i]!=null){  
                    if(type==getAcctType(accounts[i])){
@@ -114,7 +114,7 @@ public class Customer
                    }
                 }
          }
-        return null;
+        throw new AccountTypeNotFoundException(type);
     }
     
     /**
@@ -250,25 +250,22 @@ public class Customer
      * @return status dari method, true jika akun ditambahkan, false jika akun tidak di tambahkan
      *
      */
-    public boolean addAccount(Account akun){
+    public void addAccount(Account akun)throws AccountTypeAlreadyExistException{
         /**
          * Variabel lokal untuk boolean akun dimasukan ke array atau tidak
          */
-        boolean accountAdded=false;
         if (getNumOfAccounts()<5){
             if(checkMultiAccount(akun)==false){
                 accounts[numberOfCurrentAccounts]=akun;
                 numberOfCurrentAccounts++;
-                accountAdded=true;
             }
             else if (checkMultiAccount(akun)==true){
-                //do nothing
+                throw new AccountTypeAlreadyExistException(akun);
             }
         }
         else{
-            return accountAdded;
+            throw new AccountTypeAlreadyExistException(akun);
         }
-        return accountAdded;
     }
     
     /**

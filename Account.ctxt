@@ -14,6 +14,6 @@ comment4.params=amount
 comment4.target=void\ setBalance(double)
 comment4.text=\r\n\ Mengeset\ Balance\ berdasarkan\ uang\ yang\ ada,\ membuka\ tabungan\ dengan\r\n\ dana\ awal\r\n\ \r\n\ @param\ amount\ jumlah\ pertama\ kali\ membuka\ tabungan\r\n
 comment5.params=amount
-comment5.target=boolean\ withdraw(double)
+comment5.target=void\ withdraw(double)
 comment5.text=\r\n\ Method\ untuk\ mengambil\ uang\ dalam\ suatu\ akun\ dengan\ jumlah\ sesuai\ input\r\n\ uang\ dalam\ akun\ akan\ berkurang.\ jika\ jumlah\ yang\ diambil\r\n\ melebihi\ jumlah\ uang\ dalam\ akun,\ transaksi\ ditolak.\r\n\ @param\ amount\ jumlah\ uang\ yang\ akan\ di\ ambil\r\n
 numComments=6

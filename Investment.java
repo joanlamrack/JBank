@@ -6,7 +6,7 @@ import java.text.ParseException;
  * Write a description of class Investment here.
  * 
  * @author Erithiana Sisijoan Koesnadi
- * @version 6.3
+ * @version 8.7
  */
 public final class Investment extends Savings
 {
@@ -75,16 +75,14 @@ public final class Investment extends Savings
      * @param amount jumlah yang ditarik
      * @return boolean status dari method
      */
-    public boolean withdraw(double amount){
-        boolean status=false;
-        if(withdraw(amount)==true){
+    public void withdraw(double amount)throws AmountOverDrawnException{
+        if(amount>=this.getBalance()){
             if(Calendar.getInstance().before(endDate)==true){
-                status=true;
+                //true state
             }
         }
         else{
-            //do nothing
+            throw new AmountOverDrawnException(this);
          }
-        return status;
         }
     }

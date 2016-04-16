@@ -148,7 +148,7 @@ public class ATMGUI extends JFrame
      /**
      * Method untuk mengembalikan Apa yang ada dalam Text Area
      * 
-     * @return ID kustomer
+     * @return isi text area
      */
     public String getTextArea(){
         return textAreaMain.getText();

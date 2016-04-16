@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
  * Write a description of class LineOfCredit here.
  * 
  * @author erithiana sisijoan
- * @version 6.8
+ * @version 8.7
  */
 public class LineOfCredit extends Checking
 {
@@ -85,19 +85,17 @@ public class LineOfCredit extends Checking
     * 
     * @param amount balance yang diambil
     */
-   public boolean withdraw(double amount){
+   public void withdraw(double amount)throws AmountOverDrawnException{
        if(amount<=balance){
            balance -= amount;
-           return true;
        }
        else if(amount>balance && creditBalance>creditLimit){
            creditBalance-=(amount-balance);
            balance = 0;
            feeAssessment();
-           return true;
        }
        else{
-           return false;
+           throw new AmountOverDrawnException(this);
        }
    }
 }

@@ -3,7 +3,7 @@
  * Kelas yang mewakili saving, ektensi dari Account
  * 
  * @author Erithiana Sisijoan
- * @version 6.3
+ * @version 8.7
  */
 public class Savings extends Account
 {
@@ -40,14 +40,14 @@ public class Savings extends Account
      * 
      * @param amount jumalah yang akan ditarik
      */
-    public boolean withdraw(double amount){
+    public void withdraw(double amount) throws AmountOverDrawnException{
         double checkDrawBalance= balance - amount;
         if (checkDrawBalance<0||amount<0){
-            return false;
+            throw new AmountOverDrawnException(this);
         }
         else{
             this.balance=balance-amount;
-            return true;
+            //return true;
         }
     }
     
