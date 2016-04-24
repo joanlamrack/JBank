@@ -113,11 +113,10 @@ public class Bank
      * getAddress - Method untuk mengambil alamat bank yang ada pada variabel bankAddress
      * @return String   alamat bank
      */
-    /*
+    
     public static String getAddress(){
         return bankAddress;
     }
-    */
     
     /**
      * Method untuk menambahkan objek customer ke dalam array
@@ -309,11 +308,11 @@ public class Bank
        premiumInterestRate=rate;
     }
     
-    /*
+    
     public static int getNumOfCurrentCustomer(){
         return numOfCurrentCustomer;
     }
-    */
+    
    
     /**
      * Method untuk mengembalikan Waktu buka Bank dalam bentuk date
@@ -370,5 +369,7 @@ public class Bank
         setCloseTime(jamTutup, menitTutup);
         setStartTime(jamBuka, menitBuka);
     }
+    
+    
     
 }

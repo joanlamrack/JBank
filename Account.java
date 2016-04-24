@@ -1,11 +1,11 @@
-
+import java.io.Serializable;
 /**
  * Mewakili Kelas Akun yang berhubungan dengan balance dan tipe akun
  * 
  * @author Erithiana Sisijoan Koesnadi 
- * @version 8.7
+ * @version 9.3
  */
-public abstract class Account
+public abstract class Account implements Serializable
 {
     // instance variables - replace the example below with your own
     

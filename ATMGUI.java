@@ -1,7 +1,7 @@
 import javax.swing.*;//Library GUI
 import java.awt.*;
 /**
- * Kelas yang merepresentaskan GUI
+ * Kelas yang merepresentaskan ATMGUI
  * , Merupakan child dari JFrame
  * 
  * @author erithiana sisijoan 

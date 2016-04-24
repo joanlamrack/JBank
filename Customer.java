@@ -2,13 +2,14 @@ import java.util.regex.Matcher; // library untuk regular expression, matcher dan
 import java.util.regex.Pattern;
 import java.text.DateFormat;
 import java.util.Date;
+import java.io.Serializable;
 /**
  * Mewakili Kelas Kustomer yang berisi informasi tentang Kustomer serta akun
  * 
  * @author Erithiana Sisijoan
  * @version 8.7
  */
-public class Customer
+public class Customer implements Serializable
 {
     /**
      * membuat objek Account dengan nama accounts

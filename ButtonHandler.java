@@ -6,7 +6,7 @@ import java.awt.event.*;
  * Mengimplementasikan Action Listener
  * 
  * @author erithiana sisijoan
- * @version 8.7
+ * @version 9.3
  */
 public class ButtonHandler implements ActionListener
 {
@@ -15,6 +15,8 @@ public class ButtonHandler implements ActionListener
     */
    private ATMGUI gui;
    
+   private CustomerGUI cgui;
+   
    /**
     * Kelas Konstruktor dari Button Handler
     * 
@@ -22,6 +24,15 @@ public class ButtonHandler implements ActionListener
     */
    public ButtonHandler(ATMGUI gui){
        this.gui=gui;
+   }
+   
+    /**
+    * Kelas Konstruktor dari Button Handler
+    * 
+    * @param gui Objek gui yang akan dijadikan parameter.
+    */
+   public ButtonHandler(CustomerGUI cgui){
+       this.cgui=cgui;
    }
    
    /**
@@ -47,7 +58,12 @@ public class ButtonHandler implements ActionListener
            gui.setTextArea("Customer: " + gui.getIDcust() +" Mempunyai Total dalam Account: Rp " + locateAccount('S').getBalance());
            clearText();
        }
-       
+       else if(e.getActionCommand().equals("Save & Return")){
+           System.out.println("Logic not yet implemented");
+       }
+       else if(e.getActionCommand().equals("Cancel")){
+           System.out.println("Logic not yet implemented");
+       }
        else{
            clearText();
            gui.setTextArea("");
