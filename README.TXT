@@ -18,12 +18,16 @@ AUTHORS:
   Akbar Sahata (Supervisor)
 
 Documentation Of Version:
+9.3
+  -Temporary (Half-done)
+  -Added CustomerGUI Class, Logic not Yet Implemented
+  -Implementing Filewriter and FileReader
+
 8.7
   -Temporary Standard Module 8 task 7 done.
 
 7.3.1
   -Added Total dan ButtonHandler Algorithm.
-
 
 7.3
   -Temporary Standard module 7 task 3 done.
