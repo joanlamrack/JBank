@@ -72,11 +72,16 @@ public class Customer implements Serializable
      * @param lastName nama belakang
      * @param dateOfBirth tanggal tempat lahir
      */
-    public Customer(String firstName, String lastName, Date dateOfBirth){
+    public Customer(int custId, String firstName, String lastName, Date dateOfBirth, String cityAddress, String streetAddress, String phoneNumber, String zipOrPostalCode, String email){
         this.firstName=firstName;
         this.lastName=lastName;
         this.dateOfBirth=dateOfBirth;
-        this.custId=Bank.getNextID();//mengambil nexid dari kelas static Bank dengan memanggil nama kelas secara langsung
+        this.custId=custId;//mengambil nexid dari kelas static Bank dengan memanggil nama kelas secara langsung
+        this.cityAddress=cityAddress;
+        this.streetAddress=streetAddress;
+        this.phoneNumber=phoneNumber;
+        this.zipOrPostalCode=zipOrPostalCode;
+        setEmail(email);
     }
     
      /**
@@ -84,11 +89,13 @@ public class Customer implements Serializable
      * @param firstName nama depan
      * @param lastName nama belakang
      */
-     public Customer(String firstName, String lastName){
+     public Customer(int custId, String firstName, String lastName, Date dateOfBirth){
         this.firstName=firstName;
         this.lastName=lastName;
-        this.dateOfBirth=null;
-        this.custId=Bank.getNextID();
+        this.dateOfBirth=dateOfBirth;
+        this.custId=custId;
+        System.out.println("Creating customer"+ firstName +" "+ lastName+" "+dateOfBirth + " with ID " + this.custId);
+        (new LogData()).write((Bank.lastCustID+1)+"");
     }
     
      /**
@@ -215,7 +222,7 @@ public class Customer implements Serializable
         String regex="^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(emailAddress);
-        System.out.println(emailAddress +" : "+ matcher.matches());
+        //System.out.println(emailAddress +" : "+ matcher.matches());
         if (matcher.matches()==true){
             email=emailAddress;
         }

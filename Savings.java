@@ -21,7 +21,7 @@ public class Savings extends Account
     public Savings(Customer cust, double amount){
         super();
         id=cust.getCustomerId()+"";
-        if(amount>=10){
+        if(amount>=100){
             setBalance(amount);
         }
     }

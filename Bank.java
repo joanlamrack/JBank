@@ -5,13 +5,20 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.ParseException;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.Iterator;
+import java.math.*;
+import java.io.*;
 /**
  * Mewakili kelas Bank yang mengandung informasi mengenai Bank
  * 
  * @author Erithiana Sisijoan Koesnadi
  * @version 5.4 (Arrays)
  */
-public class Bank
+public class Bank implements Serializable
 {
     // instance variables - replace the example below with your own
     /**
@@ -32,7 +39,7 @@ public class Bank
     /**
      * variabel menyimpan nilai awal id kustomer
      */
-    private static int lastCustID=1000;
+    public static int lastCustID=1000;
     private static int nextCustID=1000;
     
     /**
@@ -78,12 +85,12 @@ public class Bank
     /**
      * variabel menyimpan variable untuk id kustomer
      */
-    private static int nextID=1000;
+    public static int nextID=1000;
     
     /**
      * variabel untuk array customer
      */
-    public static Customer[] customer; 
+    public static ArrayList<Customer> customer; 
     
     /**
      * Static Initializer block
@@ -93,9 +100,24 @@ public class Bank
     static {
         System.out.println("Enter Max number of customer");
         Scanner trial = new Scanner(System.in);
-        maxNumOfCustomers=trial.nextInt();
+        maxNumOfCustomers=3;//trial.nextInt();
         
-        customer= new Customer[maxNumOfCustomers];
+        //CustomerFileReader reader= new CustomerFileReader();
+        LogData logdata= new LogData();
+        
+        //customer= new TreeSet<>(Comparator.comparing(Customer::getCustomerId));
+        customer= new ArrayList<Customer>();
+
+        try{
+            logdata.readFile();
+                
+        
+        }
+        catch(IOException e){
+            // do nothing
+        }
+
+        
     }
     
     /**
@@ -126,7 +148,7 @@ public class Bank
      */
     public static boolean addCustomer(Customer cust){
             if (numCust<maxNumOfCustomers){
-                customer[numCust]=cust;
+                customer.add(cust);
                 numCust++;
                 return true;
             }
@@ -150,15 +172,21 @@ public class Bank
      * @param custID cust di yang akan dicari.
      * @return akun kustomer dengan id yang sama dengan parameter
      */
-    public static Customer getCustomer(int custID){
-        for (int i=0; i<maxNumOfCustomers; i++){
-            if (customer[i]!=null){
-                if (customer[i].getCustomerId()==custID){
-                    return customer[i];
-                }
-            }
+    public static Customer getCustomer(int custID) throws CustomerNotFoundException{
+        Iterator itrpointer = customer.iterator();
+        Customer found=null;
+        while (itrpointer.hasNext()){
+           found= (Customer)itrpointer.next();
+           if(found.getCustid()==(custID)){ 
+               break;
+           }
+           
         }
-        return null;
+        if(found.getCustid()!=custID){
+            found=null;
+            throw new CustomerNotFoundException(custID);
+        }
+        return found;
     }
     
     /**
@@ -217,16 +245,17 @@ public class Bank
     public static int getMaxCustomers(){
         return maxNumOfCustomers;
     }
+    
     /**
      * Menunjukkan nama Bank
      * 
      * @return String   nama bank
      */
-    /*
+    
     public static String getName(){
         return bankName;
     }
-    */
+    
     /**
      * Menunjukkan ID kustomer berikutnya. semua akun dimulai dari angka 1000.
      * customer ke -n akan mendapatkan id 1000+n
@@ -249,6 +278,8 @@ public class Bank
             lastCustID=nextCustID;
             numOfCurrentCustomer++;
         }
+        
+        System.out.println("Nextid "+nextID+"\n nextcustid: "+nextCustID+"\nlastCustId: "+lastCustID);
         return nextID;
     }
     
@@ -308,11 +339,14 @@ public class Bank
        premiumInterestRate=rate;
     }
     
-    
+    /**
+     * Untuk mendapatkan jumlah customer saat ini
+     * 
+     * @return jumlah customer saat ini
+     */
     public static int getNumOfCurrentCustomer(){
         return numOfCurrentCustomer;
     }
-    
    
     /**
      * Method untuk mengembalikan Waktu buka Bank dalam bentuk date
@@ -371,5 +405,8 @@ public class Bank
     }
     
     
-    
+    public static void saveCustomer(){
+         CustomerFileWriter writer= new CustomerFileWriter();   
+         writer.saveCustomer(customer);
+    }
 }

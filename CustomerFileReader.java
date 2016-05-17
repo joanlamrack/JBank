@@ -26,9 +26,21 @@ public class CustomerFileReader
     /**
      * Method Konstruktor CustomerFileReader
      */
+    public CustomerFileReader(File Input){
+        try{
+            objectFile= Input;
+            fileInputStream= new FileInputStream(objectFile);
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Not found");
+        }
+        
+    }
+    
     public CustomerFileReader(){
         try{
-            fileInputStream= new FileInputStream("customer.dat");
+            objectFile= new File("customers.dat");;
+            fileInputStream= new FileInputStream(objectFile);
         }
         catch(FileNotFoundException e){
             System.out.println("Not found");
@@ -39,14 +51,14 @@ public class CustomerFileReader
     /**
      * Method untuk menulis Arraylist kedalam File .dat
      * 
-     * @return Arraylist<Customer> dari File dat
+     * @return SortedSet<Customer> dari File dat
      */
-    public ArrayList<Customer> readCustomer(){
-        ArrayList<Customer> cust=null;
+    public SortedSet<Customer> readCustomer(){
+        SortedSet<Customer> cust=null;
         try{
             objectInputStream= new ObjectInputStream(fileInputStream);
             //menampung data hasil bacaan
-            cust=(ArrayList<Customer>) objectInputStream.readObject();
+            cust=(SortedSet<Customer>) objectInputStream.readObject();
             //tutup stream untuk membaca.
             objectInputStream.close();
         }

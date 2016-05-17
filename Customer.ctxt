@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.params=firstName\ lastName\ dateOfBirth
-comment0.target=Customer(java.lang.String,\ java.lang.String,\ java.util.Date)
+comment0.params=custId\ firstName\ lastName\ dateOfBirth\ cityAddress\ streetAddress\ phoneNumber\ zipOrPostalCode\ email
+comment0.target=Customer(int,\ java.lang.String,\ java.lang.String,\ java.util.Date,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ method\ dengan\ input\ nama\ depan,\ nama\ belakang\ dan\ tanggal\ lahir,\ serta\ mengambil\ ID\ secara\ langsung\r\n\ @param\ firstName\ nama\ depan\r\n\ @param\ lastName\ nama\ belakang\r\n\ @param\ dateOfBirth\ tanggal\ tempat\ lahir\r\n
-comment1.params=firstName\ lastName
-comment1.target=Customer(java.lang.String,\ java.lang.String)
+comment1.params=custId\ firstName\ lastName\ dateOfBirth
+comment1.target=Customer(int,\ java.lang.String,\ java.lang.String,\ java.util.Date)
 comment1.text=\r\n\ Constructor\ method\ untuk\ Customer\ dengan\ input\ nama\ depan\ dan\ belakang\ saja\r\n\ @param\ firstName\ nama\ depan\r\n\ @param\ lastName\ nama\ belakang\r\n
 comment10.params=street\ city\ code
 comment10.target=void\ setAddress(java.lang.String,\ java.lang.String,\ java.lang.String)

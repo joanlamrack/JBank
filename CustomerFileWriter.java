@@ -26,8 +26,21 @@ public class CustomerFileWriter
     /**
      * Kontruktor CustomerFileWriter
      */
+    public CustomerFileWriter(File input){
+        objectFile= input;
+        try{
+            fileOutputStream= new FileOutputStream(objectFile);
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Not found");
+        }
+    }
+    
+    /**
+     * Kontruktor CustomerFileWriter
+     */
     public CustomerFileWriter(){
-        objectFile= new File("customer.dat");
+        objectFile= new File("customers.dat");
         try{
             fileOutputStream= new FileOutputStream(objectFile);
         }
@@ -41,7 +54,7 @@ public class CustomerFileWriter
      * 
      * @param customers ArrayList berisi customer
      */
-    public void saveCustomer(ArrayList customers){
+    public void saveCustomer(SortedSet customers){
         try{
             //
             objectOutputStream= new ObjectOutputStream(fileOutputStream);
